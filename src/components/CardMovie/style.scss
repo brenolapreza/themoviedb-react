@@ -1,0 +1,39 @@
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 176px;
+  height: 320px;
+
+  margin-bottom: 50px;
+  padding: 10px;
+  margin: 12px;
+
+  text-decoration: none;
+
+  @media (max-width: 786px) {
+    margin: 5px;
+  }
+
+  img {
+    border-radius: 4px;
+  }
+}
+
+.description {
+  padding: 12px 0 13px 0;
+  height: 55px;
+
+  h2 {
+    font-size: 1.6rem;
+    color: var(--black);
+    margin-bottom: 0;
+  }
+}
+
+.data {
+  h4 {
+    font-size: 1.4rem;
+    color: var(--grey-200);
+  }
+}

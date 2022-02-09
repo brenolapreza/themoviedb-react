@@ -1,0 +1,9 @@
+.movieContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @media (max-width: 786px) {
+    justify-content: center;
+  }
+}

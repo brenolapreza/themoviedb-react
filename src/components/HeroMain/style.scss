@@ -1,0 +1,47 @@
+.heroContainer {
+  background: var(--purple-300);
+  width: 100%;
+  height: 450px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.headingWrapper {
+  min-height: 200px;
+  max-width: 780px;
+  margin: 0 auto;
+  h1 {
+    color: var(--white);
+    font-size: 4.8rem;
+  }
+}
+
+.filterWrapper {
+  p {
+    color: var(--white);
+    font-size: 1.4rem;
+  }
+
+  input {
+    background: var(--white);
+    color: var(--black);
+
+    padding: 9px 16px;
+    border: none;
+    border-radius: 4px;
+    margin: 8px 12px;
+
+    font-size: 1.6rem;
+    font-weight: bold;
+
+    transition: 0.2s;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

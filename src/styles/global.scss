@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+}
+
+button,
+h1,
+h2,
+h3,
+p,
+li,
+a {
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+html {
+  // 1rem = 10px
+  font-size: 62.5%;
+}
+
+img {
+  max-width: 100%;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --grey-200: #646464;
+  --purple-100: #5c16c5;
+  --purple-300: #2d0c5e;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+
+  @media (max-width: 786px) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+// Carousel styles
+.slick-initialized .slick-slide {
+  padding: 10px;
+}
