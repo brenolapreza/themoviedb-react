@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Actors } from '../../components/Actors';
-import { Header } from '../../components/Header';
-import { HeroInfo } from '../../components/HeroInfo';
-import { Api } from '../../services/api';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Actors } from "../../components/Actors";
+import { Header } from "../../components/Header";
+import { HeroInfo } from "../../components/HeroInfo";
+import { Api } from "../../services/api";
 
 // /movie/${props.id}?api_key=04d6016d265d98ccb0a9c62f75d23173&language=pt-BR
 
@@ -11,13 +11,18 @@ export const Info = (props) => {
   const [movie, setMovie] = useState([]);
   const userId = useParams();
 
-  useEffect(() => {
-    Api.get(
+  async function handleGetMovies() {
+    const res = await Api.get(
       `/movie/${userId.id}?api_key=04d6016d265d98ccb0a9c62f75d23173&language=pt-BR`
-    ).then((res) => setMovie(res.data));
-  }, []);
+    ).then((res) => {
+      console.log(res);
+      setMovie(res.data);
+    });
+  }
 
-  console.log(props);
+  useEffect(() => {
+    handleGetMovies();
+  }, []);
 
   return (
     <div>
@@ -34,6 +39,7 @@ export const Info = (props) => {
           time={movie.runtime}
           vote={movie.vote_average}
           overview={movie.overview}
+          tagline={movie.tagline}
         />
       </section>
 

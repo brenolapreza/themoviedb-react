@@ -1,15 +1,15 @@
-import './style.scss';
-import { data } from '../../services/data';
-import { useEffect, useState } from 'react';
-import { Api } from '../../services/api';
-import { CircularProgressbar } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
-import { CreditInfo } from '../CreditInfo';
+import "./style.scss";
+import { data } from "../../services/data";
+import { useEffect, useState } from "react";
+import { Api } from "../../services/api";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import { CreditInfo } from "../CreditInfo";
 
 export const HeroInfo = (props) => {
   //Format date
   const date = new Date(props.date);
-  const formatDate = date.toLocaleDateString('pt-BR');
+  const formatDate = date.toLocaleDateString("pt-BR");
   const year = date.getFullYear();
 
   //Format Genres
@@ -44,18 +44,17 @@ export const HeroInfo = (props) => {
         <div className="info">
           <h1>{` ${props.title} (${year})`}</h1>
           <p>
-            {`${props.adult ? '+18' : ''} 
+            {`${props.adult ? "+18" : ""} 
             ${formatDate} • 
             (${props.language}) • 
-            ${mapGenres} • 
-            ${`fala ai ze`}
+            ${mapGenres}
             `}
           </p>
           <div className="progressBarWrapper">
             <div style={{ width: 61, height: 61 }}>
               <CircularProgressbar
-                value={valuePercent}
-                text={`${valuePercent}%`}
+                value={valuePercent.toFixed(1)}
+                text={`${valuePercent.toFixed(1)}%`}
                 strokeWidth={12}
                 background={true}
                 styles={{
@@ -63,14 +62,14 @@ export const HeroInfo = (props) => {
                     stroke: `#14FF00, ${valuePercent})`,
                   },
                   trail: {
-                    stroke: '#42246D',
+                    stroke: "#42246D",
                   },
                   text: {
-                    fill: '#14FF00',
-                    fontSize: '2.4rem',
+                    fill: "#14FF00",
+                    fontSize: "2.4rem",
                   },
                   background: {
-                    fill: '#42246D',
+                    fill: "#42246D",
                   },
                 }}
               />
@@ -80,6 +79,7 @@ export const HeroInfo = (props) => {
               usuários
             </p>
           </div>
+          <div>{props.tagline}</div>
           <div className="sinopse">
             <h3>Sinopse</h3>
             <p>{props.overview}</p>

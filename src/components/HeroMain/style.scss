@@ -1,7 +1,8 @@
 .heroContainer {
   background: var(--purple-300);
   width: 100%;
-  height: 450px;
+  min-height: 450px;
+  max-height: 960px;
 
   display: flex;
   justify-content: center;
@@ -11,13 +12,20 @@
 }
 
 .headingWrapper {
-  min-height: 200px;
+  padding: 2rem 0;
   max-width: 780px;
   margin: 0 auto;
   h1 {
     color: var(--white);
     font-size: 4.8rem;
+
+
+    @media (max-width: 768px) {
+      font-size: 2.8rem;
+      padding: 0 1rem ;
+    }
   }
+
 }
 
 .filterWrapper {

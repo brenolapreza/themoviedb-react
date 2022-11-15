@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Api } from '../../services/api';
-import './style.scss';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Api } from "../../services/api";
+import "./style.scss";
 
 export const CreditInfo = (props) => {
-  const [info, setInfo] = useState('');
+  const [info, setInfo] = useState("");
   const params = useParams();
 
   const getData = () => {
@@ -23,6 +23,7 @@ export const CreditInfo = (props) => {
             <li key={i}>
               <div>{actor.known_for_department}</div>
               <div>{actor.name}</div>
+              {console.log(actor)}
             </li>
           ))}
       </ul>
