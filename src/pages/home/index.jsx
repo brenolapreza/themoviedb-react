@@ -41,8 +41,10 @@ export const Home = () => {
             ))}
         </div>
 
-        <button onClick={() => setPage(page - 1)}> MENOS </button>
-        <button onClick={() => setPage(page + 1)}> MAIS </button>
+        <div className='buttons'>
+        <a className='button__more prev' onClick={() => setPage(page - 1)}> MENOS </a>
+        <a className='button__more next' onClick={() => setPage(page + 1)}> MAIS </a>
+        </div>
       </div>
     </>
   );
